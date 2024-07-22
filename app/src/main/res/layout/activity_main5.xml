@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="#ffffff"
+    tools:context=".MainActivity5">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:src="@drawable/imu2"
+            android:id="@+id/img"
+            android:contentDescription="@string/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/imu_dashboard"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <!-- CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6.5dp"
+        android:layout_marginTop="48dp"
+
+        app:cardCornerRadius="30dp"
+        app:cardElevation="7dp">
+        <!-- Semi-transparent white color -->
+
+        <!-- Inner Layout inside CardView -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shadow"
+            android:padding="10dp">
+
+            <!-- EditText -->
+            <TextView
+                android:id="@+id/patient_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="2dp"
+                android:elevation="5dp"
+                android:text="@string/Patient_id"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:transitionName="patient_id" />
+
+            <AutoCompleteTextView
+                android:id="@+id/myEditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/patient_id"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:completionThreshold="1"
+                android:hint="@string/enter_patient_id"
+                android:importantForAutofill="yes"
+                android:inputType="textAutoComplete"
+                android:maxLines="1"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/part"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myEditText"
+                android:padding="10dp"
+                android:text="@string/Part"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:layout_toEndOf="@id/part" />
+
+            <TextView
+                android:id="@+id/part2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/part"
+                android:padding="10dp"
+                android:text="@string/movement"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:layout_toEndOf="@id/part2" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="230dp"
+        app:cardElevation="10dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button"
+            android:text="@string/fetch"
+            android:textSize="20sp"
+            android:id="@+id/but3"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="377dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="6.5dp"
+        android:layout_marginTop="290dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shadow">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chart1"
+                android:id="@+id/chart3"
+                android:textSize="20sp"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart1"
+                android:layout_below="@+id/chart3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <GridLayout
+        android:id="@+id/gridlayout"
+        android:layout_width="388dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/shadow"
+        android:columnCount="2"
+        android:rowCount="1">
+
+        <ImageView
+            android:id="@+id/myicon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/pm"
+            android:onClick="onmyiconClick"
+            android:src="@drawable/patient" />
+
+        <ImageView
+            android:id="@+id/myicon1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/dashboard"
+            android:onClick="onmyicon1Click"
+            android:src="@drawable/dashboard" />
+
+
+    </GridLayout>
+
+
+</RelativeLayout>
